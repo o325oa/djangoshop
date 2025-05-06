@@ -1,0 +1,32 @@
+{% extends 'flowers/base.html' %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+<h2>Наш каталог</h2>
+
+{% for product in products %}
+<div class="product" onmouseover="zoomProduct(this)" onmouseout="unzoomProduct(this)">
+    <h3>{{ product.name }}</h3>
+    {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+    {% endif %}
+    <p>{{ product.description }}</p>
+    <p><strong>Цена: {{ product.price }} руб.</strong></p>
+</div>
+{% endfor %}
+
+<script>
+    // JS для каталога
+    function zoomProduct(element) {
+        element.style.transform = 'scale(1.02)';
+        element.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
+        element.style.transition = 'all 0.3s ease';
+    }
+    
+    function unzoomProduct(element) {
+        element.style.transform = 'scale(1)';
+        element.style.boxShadow = 'none';
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'flowers/base.html' %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+<h2>О нашем магазине</h2>
+<p>Мы работаем с 2010 года и предлагаем только самые свежие цветы.</p>
+<p>Наши флористы - профессионалы с многолетним опытом.</p>
+
+<div id="team-photo">
+    <p>Наша команда:</p>
+    <!-- Здесь может быть изображение команды -->
+</div>
+
+<script>
+    // JS для страницы "О нас"
+    document.addEventListener('DOMContentLoaded', function() {
+        const teamPhoto = document.getElementById('team-photo');
+        teamPhoto.addEventListener('click', function() {
+            alert('Спасибо, что интересуетесь нашей командой!');
+        });
+    });
+</script>
+{% endblock %}

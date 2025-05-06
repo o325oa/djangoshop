@@ -1,0 +1,27 @@
+{% extends 'flowers/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h2>Добро пожаловать в наш цветочный магазин!</h2>
+<p>Мы предлагаем свежие и красивые цветы для любого случая.</p>
+
+<div id="special-offer">
+    <h3>Специальное предложение!</h3>
+    <p>Покупайте 3 букета и получайте скидку 15%!</p>
+</div>
+
+<script>
+    // JS для главной страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        const offer = document.getElementById('special-offer');
+        let isPink = false;
+        
+        // Анимация мигания специального предложения
+        setInterval(() => {
+            offer.style.backgroundColor = isPink ? '#fff9f9' : '#fff';
+            isPink = !isPink;
+        }, 1000);
+    });
+</script>
+{% endblock %}
